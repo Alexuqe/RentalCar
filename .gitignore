@@ -1,0 +1,55 @@
+# Xcode project artifacts
+*.xcworkspace
+*.xcodeproj
+!*.xcodeproj/xcshareddata
+DerivedData/
+build/
+xcuserdata/
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+
+# XcodeGen
+project.yml
+*.xcodeproj
+!*.xcodeproj/xcshareddata
+
+# Swift Package Manager
+.swiftpm/
+Package.resolved
+.build/
+
+# CocoaPods
+Pods/
+Podfile.lock
+
+# Carthage
+Carthage/
+Carthage/Build/
+
+# Fastlane
+fastlane/report.xml
+fastlane/screenshots/
+fastlane/test_output/
+fastlane/tmp/
+
+# Misc
+*.DS_Store
+*.log
+*.env
+.env.*
+.idea/
+.vscode/
+*.swp
+*.swo
+*.tmp
+*.bak
+*.patch
+
+# Output
+*.ipa
+*.dSYM
+*.xcarchive
+*.app
+*.framework
