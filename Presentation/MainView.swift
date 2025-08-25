@@ -2,18 +2,27 @@
 import SwiftUI
 
 struct MainView: View {
+
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            Text("main")
         }
-        .padding()
     }
+}
 
+struct TabScreen: View {
+    @State private var currentScreen: TabItemModel = .message
+
+    var body: some View {
+        TabBarView(currentScreen: $currentScreen)
+        .safeAreaInset(edge: .bottom) {
+            TabBar(
+            page: $currentScreen,
+            bars: TabItemModel.allCases)
+        }
+    }
 }
 
 #Preview {
-    MainView()
+    TabScreen()
 }

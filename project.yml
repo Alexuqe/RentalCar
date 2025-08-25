@@ -20,6 +20,12 @@ targets:
       - path: Infrastructure
       - path: Presentation
       - path: Utilities
+      - path: Utilities/UIComponents
+      - path: Utilities/UIComponents/TabView
+      - path: Utilities/UIComponents/TabView/Model
+      - path: Utilities/UIComponents/TabView/Item
+      - path: Utilities/UIComponents/TabView/Bar
+      - path: Utilities/UIComponents/TabView/View
       - path: Utilities/Extensions
       - path: Utilities/Properties
       - path: Utilities/ViewModifiers

@@ -4,7 +4,7 @@ import SwiftUI
 struct RentalCarApp: App {
     var body: some Scene {
         WindowGroup {
-            MainView()
+            TabScreen()
         }
     }
 }
