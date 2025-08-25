@@ -5,13 +5,8 @@
 DerivedData/
 build/
 xcuserdata/
-*.pbxuser
-*.mode1v3
-*.mode2v3
-*.perspectivev3
 
 # XcodeGen
-project.yml
 *.xcodeproj
 !*.xcodeproj/xcshareddata
 
