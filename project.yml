@@ -20,21 +20,25 @@ targets:
       - path: Infrastructure
       - path: Presentation
       - path: Utilities
-      - path: Utilities/UIComponents
-      - path: Utilities/UIComponents/TabView
-      - path: Utilities/UIComponents/TabView/Model
-      - path: Utilities/UIComponents/TabView/Item
-      - path: Utilities/UIComponents/TabView/Bar
-      - path: Utilities/UIComponents/TabView/View
       - path: Utilities/Extensions
       - path: Utilities/Properties
       - path: Utilities/ViewModifiers
+
     resources:
       - path: Resources
         excludes: ["**/*.md", "**/.DS_Store"]
+        
     settings:
       base:
         INFO_PLIST_FILE: App/Info.plist
         SWIFT_VERSION: 6.0
         DEFINES_MODULE: NO
         GENERATE_INFOPLIST_FILE: YES
+
+      debug:
+        CFBundleVersion: "1"
+        CFBundleShortVersionString: "1.0.0-debug"
+
+      release:
+        CFBundleVersion: "42"
+        CFBundleShortVersionString: "1.0.0"
