@@ -22,7 +22,11 @@ struct AccentButtonDefaultFontConfiguration: TextTypeFontConfiguration {
     var Font: Font = .system(size: 15, weight: .semibold)
 }
 
-struct AccentButtonSecondaryFontConfiguration: TextTypeFontConfiguration {
+struct AccentButtonMediumFontConfiguration: TextTypeFontConfiguration {
+    var Font: Font = .system(size: 12, weight: .semibold)
+}
+
+struct AccentButtonSmallFontConfiguration: TextTypeFontConfiguration {
     var Font: Font = .system(size: 10, weight: .medium)
 }
 
@@ -40,11 +44,6 @@ struct AccentButtonSmallLayout: TextTypeButtonLayout {
 }
 
 struct AccentButtonMediumLayout: TextTypeButtonLayout {
-    var padding: EdgeInsets = EdgeInsets(top: 6, leading: 12, bottom: 6, trailing: 12)
-    var height: CGFloat = 31
-}
-
-struct AccentButtonLargeLayout: TextTypeButtonLayout {
-    var padding: EdgeInsets = EdgeInsets(top: 6, leading: 12, bottom: 6, trailing: 12)
+    var padding: EdgeInsets = EdgeInsets(top: 6, leading: 0, bottom: 6, trailing: 0)
     var height: CGFloat = 31
 }
