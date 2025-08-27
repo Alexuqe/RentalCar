@@ -1,33 +1,34 @@
 import SwiftUI
 
 struct TabItem: View {
-    @Binding var pages: TabItemModel
     let item: TabItemModel
-
+    let isSelected: Bool
+    
     var body: some View {
-        Button {
-            withAnimation { pages = item }
-        }
-        label: {
-            VStack {
-                Image(item.image)
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 24, height: 24)
-                    .foregroundStyle(.gray)
-
-                Text(item.title)
-                    .foregroundStyle(.gray)
-                    .font(.system(size: 17))
-            }
+        VStack(spacing: 4) {
+            Image(item.image)
+                .resizable()
+                .scaledToFit()
+                .frame(width: 24, height: 24)
+                .padding(10)
+                .background(
+                    Circle()
+                        .fill(isSelected ? Color.green : Color.clear)
+                        .shadow(color: isSelected ? .green.opacity(0.6) : .clear, radius: 10, x: 0, y: 0)
+                )
+                .offset(y: isSelected ? -5 : 0)
+            
+            Text(item.title)
+                .font(.system(size: 17, weight: .regular))
+                .foregroundColor(isSelected ? .clear : .white.opacity(0.7))
         }
         .frame(maxWidth: .infinity)
-        .background(Color.black)
+        .background(.black)
     }
 }
 
 #Preview {
     @Previewable @State var page: TabItemModel = .message
-    TabItem(pages: $page, item: .message)
+    TabItem(item: .message, isSelected: false)
 }
 

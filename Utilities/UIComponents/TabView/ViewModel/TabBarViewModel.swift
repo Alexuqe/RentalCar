@@ -1,8 +1,5 @@
-//
-//  TabBarViewModel.swift
-//  App
-//
-//  Created by Артем Крисанов on 27.08.2025.
-//
+import SwiftUI
 
-import Foundation
+final class TabBarViewModel: ObservableObject {
+    @Published var selectedTab: TabItemModel = .list
+}

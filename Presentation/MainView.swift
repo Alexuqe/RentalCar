@@ -24,18 +24,22 @@ struct MainView: View {
 }
 
 struct TabScreen: View {
-    @State private var currentScreen: TabItemModel = .message
+    @StateObject private var viewModel = TabBarViewModel()
     
-    init() {
-        UITabBar.appearance().isHidden = true
-    }
-
     var body: some View {
-        TabBarView(currentScreen: $currentScreen)
-            .safeAreaInset(edge: .bottom) {
-            TabBar(
-            page: $currentScreen,
-            bars: TabItemModel.allCases)
+        ZStack(alignment: .bottom) {
+            Group {
+                switch viewModel.selectedTab {
+                case .message: MainView()
+                case .trips: MainView()
+                case .list: MainView()
+                case .favorite: MainView()
+                case .host: MainView()
+                }
+            }
+            
+            TabBarView(viewModel: viewModel)
+            
         }
     }
 }

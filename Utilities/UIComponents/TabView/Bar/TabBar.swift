@@ -7,7 +7,7 @@ struct TabBar: View {
     var body: some View {
         HStack {
             ForEach(bars, id: \.self) { bar in
-                TabItem(pages: $page, item: bar)
+                TabItem(item: bar, isSelected: false)
             }
         }
         .padding(.vertical, 21)
