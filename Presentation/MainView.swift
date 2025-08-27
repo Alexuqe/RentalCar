@@ -14,19 +14,25 @@ struct MainView: View {
                     .background(Color(hex: "32D34B"))
                 }
                 .clipShape(.buttonBorder)
+                
+                Spacer()
             }
-            .padding(.horizontal, 20)
             .frame(maxWidth: .infinity, alignment: .leading)
+            .padding(.horizontal, 20)
         }
     }
 }
 
 struct TabScreen: View {
     @State private var currentScreen: TabItemModel = .message
+    
+    init() {
+        UITabBar.appearance().isHidden = true
+    }
 
     var body: some View {
         TabBarView(currentScreen: $currentScreen)
-        .safeAreaInset(edge: .bottom) {
+            .safeAreaInset(edge: .bottom) {
             TabBar(
             page: $currentScreen,
             bars: TabItemModel.allCases)

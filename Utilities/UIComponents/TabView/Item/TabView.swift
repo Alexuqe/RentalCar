@@ -10,21 +10,19 @@ struct TabItem: View {
         }
         label: {
             VStack {
-                Image(systemName: item.image)
+                Image(item.image)
                     .resizable()
                     .scaledToFit()
                     .frame(width: 24, height: 24)
-                    .foregroundStyle(
-                        pages == item
-                        ? .blue
-                        : .gray
-                    )
+                    .foregroundStyle(.gray)
 
                 Text(item.title)
                     .foregroundStyle(.gray)
+                    .font(.system(size: 17))
             }
         }
         .frame(maxWidth: .infinity)
+        .background(Color.black)
     }
 }
 

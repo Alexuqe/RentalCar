@@ -10,9 +10,9 @@ struct TabBar: View {
                 TabItem(pages: $page, item: bar)
             }
         }
-        .padding(.vertical, 18)
-        .padding(.horizontal, 16)
-        .background(.gray.opacity(0.1))
+        .padding(.vertical, 21)
+        .padding(.horizontal, 10)
+        .background(.black)
     }
 }
 

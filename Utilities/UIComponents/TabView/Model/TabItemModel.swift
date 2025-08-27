@@ -1,27 +1,27 @@
 enum TabItemModel: CaseIterable, Hashable {
     case message
-    case tips
+    case trips
     case list
     case favorite
     case host
 
     var image: String {
         switch self {
-            case .message:   "message.fill"
-            case .tips:      "list.clipboard.fill"
-            case .list:      "leaf.fill"
-            case .favorite:  "message.fill"
-            case .host:      "person.fill"
+            case .message:   "ChatIcon"
+            case .trips:     "TripsIcon"
+            case .list:      "MainIcon"
+            case .favorite:  "FavoriteIcon"
+            case .host:      "HostIcon"
         }
     }
 
     var title: String {
         switch self {
             case .message:  "Message"
-            case .tips:     "Tips"
-            case .list:     "Leaf"
-            case .favorite: "Чат"
-            case .host:     "Профиль"
+            case .trips:    "Tips"
+            case .list:     "List"
+            case .favorite: "Favorite"
+            case .host:     "Host"
         }
     }
 }
