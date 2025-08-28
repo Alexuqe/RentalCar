@@ -24,25 +24,22 @@ struct MainView: View {
 }
 
 struct TabScreen: View {
-    @StateObject private var viewModel = TabBarViewModel()
+    @State private var selectedTab: TabItemModel = .list
     
     var body: some View {
         ZStack(alignment: .bottom) {
-            Group {
-                switch viewModel.selectedTab {
-                case .message: MainView()
-                case .trips: MainView()
-                case .list: MainView()
-                case .favorite: MainView()
-                case .host: MainView()
+            ForEach(TabItemModel.allCases, id: \.self) { item in
+                if selectedTab == item {
+                    MainView()
                 }
             }
-            
-            TabBarView(viewModel: viewModel)
-            
         }
+        
+        TabBarView(selectedTab: $selectedTab)
+        
     }
 }
+
 
 #Preview {
     TabScreen()

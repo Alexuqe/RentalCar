@@ -10,7 +10,7 @@ struct TabBar: View {
                 TabItem(item: bar, isSelected: false)
             }
         }
-        .padding(.vertical, 21)
+        .padding(.vertical, 40)
         .padding(.horizontal, 10)
         .background(.black)
     }

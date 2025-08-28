@@ -1,11 +1,11 @@
 import SwiftUI
 
 struct TabBarView: View {
-    @ObservedObject var viewModel: TabBarViewModel
+    @Binding var selectedTab: TabItemModel
     
     var body: some View {
         ZStack {
-            TabBarBackground(selectedTab: viewModel.selectedTab)
+            TabBarBackground(selectedTab: selectedTab)
                 .fill(Color.black)
                 .frame(height: 90)
                 .shadow(radius: 5)
@@ -14,10 +14,10 @@ struct TabBarView: View {
                 ForEach(TabItemModel.allCases, id: \.self) { item in
                     Button {
                         withAnimation(.spring(response: 0.4, dampingFraction: 0.7)) {
-                            viewModel.selectedTab = item
+                            selectedTab = item
                         }
                     } label: {
-                        TabItem(item: item, isSelected: viewModel.selectedTab == item)
+                        TabItem(item: item, isSelected: selectedTab == item)
                     }
                 }
             }
