@@ -11,9 +11,9 @@ struct TextButton: View {
     init(
         image: String? = nil,
         text: String,
-        type: TextTypeButton,
-        types: TextButtonTypes,
-        font: ButtonFontConfiguration,
+        type: TextTypeButton = .primary,
+        types: TextButtonTypes = .primary,
+        font: ButtonFontConfiguration = .defaultText,
         action: @escaping () -> Void
     ) {
         self.image = image
@@ -27,7 +27,7 @@ struct TextButton: View {
     var body: some View {
         Button { action() }
         label: {
-            HStack {
+            HStack(spacing: 2) {
                 icon
                 title
             }
@@ -49,10 +49,10 @@ private extension TextButton {
 private extension TextButton {
     @ViewBuilder private var icon: some View {
         if let wrapImage = image {
-            Image(systemName: wrapImage)
-            .resizable()
-            .scaledToFit()
-            .frame(width: 6, height: 6)
+        Image(systemName: wrapImage)
+        .resizable()
+        .scaledToFit()
+        .frame(width: 6, height: 6)
         }
     }
 
@@ -66,11 +66,10 @@ private extension TextButton {
 
 #Preview {
     TextButton(
-        image: "",
+        image: "plus",
         text: "Add New Car",
-        type: .secondary,
-        types: .secondary,
-        font: .captureText,
-        action: {
-        })
+        type: .primary,
+        types: .primary,
+        font: .defaultText)
+        {}
 }
