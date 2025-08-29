@@ -15,7 +15,7 @@ struct TabBar: View {
                 }
             }
             .padding(.vertical, 40)
-            .padding(.horizontal, 12)
+            .padding(.horizontal, 10)
         }
         
      
