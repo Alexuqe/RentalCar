@@ -13,6 +13,12 @@ targets:
   App:
     type: application
     platform: iOS
+    info:
+      path: App/Info.plist
+      properties:
+        UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait]
+        UILaunchStoryboardName: LaunchScreen
+
     sources:
       - path: App
       - path: Domain
@@ -32,6 +38,7 @@ targets:
     settings:
       base:
         INFO_PLIST_FILE: App/Info.plist
+        PRODUCT_BUNDLE_IDENTIFIER: com.myapp
         SWIFT_VERSION: 6.0
         DEFINES_MODULE: NO
         GENERATE_INFOPLIST_FILE: YES

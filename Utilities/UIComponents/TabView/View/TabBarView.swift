@@ -27,6 +27,7 @@ struct TabBarView: View {
     }
 }
 
+<<<<<<< HEAD
 struct TabBarBackground: Shape {
     var selectedTab: TabItemModel
     
@@ -60,4 +61,9 @@ struct TabBarBackground: Shape {
     private func indexForTab(_ tab: TabItemModel) -> Int {
         TabItemModel.allCases.firstIndex(of: tab) ?? 0
     }
+=======
+#Preview {
+    @Previewable @State var page: TabItemModel = .message
+    TabBarView(currentScreen: $page)
+>>>>>>> develop
 }

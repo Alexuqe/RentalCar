@@ -6,6 +6,7 @@ struct MainView: View {
     var body: some View {
         NavigationStack {
             VStack(alignment: .leading) {
+<<<<<<< HEAD
                 NavigationLink { ButtonsTestScreen() }
                 label: {
                     Text("Buttons Screen")
@@ -16,10 +17,26 @@ struct MainView: View {
                 .clipShape(.buttonBorder)
                 
                 Spacer()
+=======
+                buttonsScreen
+>>>>>>> develop
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(.horizontal, 20)
         }
+    }
+}
+
+private extension MainView {
+    var buttonsScreen: some View {
+        NavigationLink { ButtonsTestScreen() }
+        label: {
+            Text("Buttons Screen")
+            .foregroundStyle(.white)
+            .padding(12)
+            .background(Color(hex: "32D34B"))
+        }
+        .clipShape(.buttonBorder)
     }
 }
 

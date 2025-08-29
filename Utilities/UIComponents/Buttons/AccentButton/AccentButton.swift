@@ -2,16 +2,16 @@ import SwiftUI
 
 struct AccentButton: View {
     private let text: String
-    private let type: TextTypeButton
-    private let layout: TextTypeButtonLayout
-    private let font: TextTypeFontConfiguration
+    private let type: ButtonType
+    private let layout: ButtonLayoutConfiguration
+    private let font: ButtonFontConfiguration
     private let action: () -> Void
 
     init(
         text: String,
-        type: TextTypeButton = .default,
-        layout: TextTypeButtonLayout = .default,
-        font: TextTypeFontConfiguration = .default,
+        type: ButtonType = .default,
+        layout: ButtonLayoutConfiguration = .default,
+        font: ButtonFontConfiguration = .default,
         action: @escaping () -> Void
     ) {
         self.text = text
@@ -31,7 +31,7 @@ struct AccentButton: View {
             .frame(maxWidth: .infinity)
             .background(type.default.backgroundColor)
         }
-        .clipShape(.rect(cornerRadius: type.default.cornerRadius))
+        .clipShape(.rect(cornerRadius: layout.cornerRadius))
         .foregroundStyle(type.default.foregroundColor)
     }
 }
