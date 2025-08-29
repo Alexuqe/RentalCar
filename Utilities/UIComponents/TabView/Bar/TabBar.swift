@@ -5,14 +5,20 @@ struct TabBar: View {
     let bars: [TabItemModel]
 
     var body: some View {
-        HStack {
-            ForEach(bars, id: \.self) { bar in
-                TabItem(item: bar, isSelected: false)
+        ZStack {
+            Rectangle()
+                .background(.black)
+            
+            HStack {
+                ForEach(bars, id: \.self) { bar in
+                    TabItem(item: bar, isSelected: false)
+                }
             }
+            .padding(.vertical, 40)
+            .padding(.horizontal, 10)
         }
-        .padding(.vertical, 40)
-        .padding(.horizontal, 10)
-        .background(.black)
+        
+     
     }
 }
 
