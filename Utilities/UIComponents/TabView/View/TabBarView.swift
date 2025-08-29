@@ -12,3 +12,8 @@ struct TabBarView: View {
         }
     }
 }
+
+#Preview {
+    @Previewable @State var page: TabItemModel = .message
+    TabBarView(currentScreen: $page)
+}

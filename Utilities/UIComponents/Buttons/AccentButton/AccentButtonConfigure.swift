@@ -1,49 +1,50 @@
 import SwiftUI
 
-// MARK: - Types
-
-struct AccentButtonType: TextTypeButton {
-    var `default`: TextTypeButtonConfiguration = AccentButtonDefaultConfiguration()
+// MARK: Button Type
+struct AccentButtonType: ButtonType {
+    var `default`: ButtonColorConfiguration = AccentButtonDefaultConfiguration()
 }
 
 
-// MARK: - Configures
 
-struct AccentButtonDefaultConfiguration: TextTypeButtonConfiguration {
+// MARK: Button Configure
+struct AccentButtonDefaultConfiguration: ButtonColorConfiguration {
     var backgroundColor: Color = Color(hex: "32D34B")
     var foregroundColor: Color = .white
-    var cornerRadius: CGFloat  = 10
 }
 
 
-// MARK: - Font Configures
 
-struct AccentButtonDefaultFontConfiguration: TextTypeFontConfiguration {
+// MARK: Button Font
+struct AccentButtonDefaultFontConfiguration: ButtonFontConfiguration {
     var Font: Font = .system(size: 15, weight: .semibold)
 }
 
-struct AccentButtonMediumFontConfiguration: TextTypeFontConfiguration {
+struct AccentButtonMediumFontConfiguration: ButtonFontConfiguration {
     var Font: Font = .system(size: 12, weight: .semibold)
 }
 
-struct AccentButtonSmallFontConfiguration: TextTypeFontConfiguration {
+struct AccentButtonSmallFontConfiguration: ButtonFontConfiguration {
     var Font: Font = .system(size: 10, weight: .medium)
 }
 
 
-// MARK: - Layout Configures
 
-struct AccentButtonDefaultLayout: TextTypeButtonLayout {
+// MARK: Button Layout
+struct AccentButtonDefaultLayout: ButtonLayoutConfiguration {
     var padding: EdgeInsets = EdgeInsets(top: 14, leading: 0, bottom: 14, trailing: 0)
+    var cornerRadius: CGFloat = 10
     var height: CGFloat = 51
 }
 
-struct AccentButtonSmallLayout: TextTypeButtonLayout {
+struct AccentButtonSmallLayout: ButtonLayoutConfiguration {
     var padding: EdgeInsets = EdgeInsets(top: 4, leading: 10, bottom: 4, trailing: 10)
+    var cornerRadius: CGFloat = 10
     var height: CGFloat = 23
 }
 
-struct AccentButtonMediumLayout: TextTypeButtonLayout {
+struct AccentButtonMediumLayout: ButtonLayoutConfiguration {
     var padding: EdgeInsets = EdgeInsets(top: 6, leading: 0, bottom: 6, trailing: 0)
+    var cornerRadius: CGFloat = 10
     var height: CGFloat = 31
 }
