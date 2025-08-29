@@ -6,7 +6,7 @@ struct MainView: View {
     var body: some View {
         NavigationStack {
             VStack(alignment: .leading) {
-<<<<<<< HEAD
+
                 NavigationLink { ButtonsTestScreen() }
                 label: {
                     Text("Buttons Screen")
@@ -17,9 +17,8 @@ struct MainView: View {
                 .clipShape(.buttonBorder)
                 
                 Spacer()
-=======
+
                 buttonsScreen
->>>>>>> develop
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(.horizontal, 20)
@@ -42,6 +41,7 @@ private extension MainView {
 
 struct TabScreen: View {
     @State private var selectedTab: TabItemModel = .list
+    @Namespace private var animation
     
     var body: some View {
         ZStack(alignment: .bottom) {
@@ -52,7 +52,7 @@ struct TabScreen: View {
             }
         }
         
-        TabBarView(selectedTab: $selectedTab)
+        TabBarView(selectedTab: $selectedTab, animation: animation)
         
     }
 }

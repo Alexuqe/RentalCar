@@ -2,6 +2,7 @@ import SwiftUI
 
 struct TabBarView: View {
     @Binding var selectedTab: TabItemModel
+    var animation: Namespace.ID
     
     var body: some View {
         ZStack {
@@ -13,12 +14,19 @@ struct TabBarView: View {
             HStack {
                 ForEach(TabItemModel.allCases, id: \.self) { item in
                     Button {
-                        withAnimation(.spring(response: 0.4, dampingFraction: 0.7)) {
+                        withAnimation(
+                            .spring(
+                                response: 0.6,
+                                dampingFraction: 0.7,
+                                blendDuration: 0.7
+                            )
+                        ) {
                             selectedTab = item
                         }
                     } label: {
-                        TabItem(item: item, isSelected: selectedTab == item)
+                        TabItem(item: item, isSelected: selectedTab == item, animation: animation)
                     }
+                    .buttonStyle(.plain)
                 }
             }
             .padding(.horizontal, 8)
@@ -27,7 +35,6 @@ struct TabBarView: View {
     }
 }
 
-<<<<<<< HEAD
 struct TabBarBackground: Shape {
     var selectedTab: TabItemModel
     
@@ -61,9 +68,5 @@ struct TabBarBackground: Shape {
     private func indexForTab(_ tab: TabItemModel) -> Int {
         TabItemModel.allCases.firstIndex(of: tab) ?? 0
     }
-=======
-#Preview {
-    @Previewable @State var page: TabItemModel = .message
-    TabBarView(currentScreen: $page)
->>>>>>> develop
 }
+
