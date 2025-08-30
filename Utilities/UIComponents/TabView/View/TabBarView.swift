@@ -45,21 +45,25 @@ struct TabBarBackground: Shape {
     
     func path(in rect: CGRect) -> Path {
         var path = Path()
+        
         let width = rect.width / CGFloat(TabItemModel.allCases.count)
         let index = CGFloat(indexForTab(selectedTab))
         let centerX = width * index + width / 2
         
+        let curveWidth: CGFloat = 80
         let curveHeight: CGFloat = 30
         
-        path.move(to: .zero)
-        path.addLine(to: CGPoint(x: centerX - 40, y: 0))
+        path.move(to: CGPoint(x: 0, y: 0))
+        path.addLine(to: CGPoint(x: centerX - curveWidth/2, y: 0))
+        
         path.addQuadCurve(
-            to: CGPoint(x: centerX + 40, y: 0),
+            to: CGPoint(x: centerX + curveWidth/2, y: 0),
             control: CGPoint(x: centerX, y: -curveHeight)
         )
-        path.addLine(to: CGPoint(x: rect.maxX, y: 0))
-        path.addLine(to: CGPoint(x: rect.maxX, y: rect.maxY))
-        path.addLine(to: CGPoint(x: 0, y: rect.maxY))
+        
+        path.addLine(to: CGPoint(x: rect.width, y: 0))
+        path.addLine(to: CGPoint(x: rect.width, y: rect.height))
+        path.addLine(to: CGPoint(x: 0, y: rect.height))
         path.closeSubpath()
         
         return path

@@ -29,7 +29,6 @@ struct TabItem: View {
                 .foregroundColor(isSelected ? .clear : .white.opacity(0.7))
         }
         .frame(maxWidth: .infinity)
-        .background(.black)
     }
 }
 
